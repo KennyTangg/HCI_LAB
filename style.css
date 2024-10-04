@@ -249,8 +249,11 @@ header {
 }
 
 .article .list {
-    margin: 10px 0 5px 30rem; /* Margins */
-    padding: 5px 0; /* Padding */
+    margin-top:10px; /* Margin */
+    margin-right:35rem; /* Margin */
+    padding-top: 10px ; /* Padding */
+    padding-bottom: 10px ; /* Padding */
+    padding-left: 45px ; /* Padding */
     border-radius: 5px; /* Rounded corners */
     font-weight: bold; /* Bold text */
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for readability */
@@ -299,7 +302,7 @@ header {
     border-radius: 5px; /* Rounded corners */
     background: linear-gradient(to bottom, rgb(244, 143, 224), rgb(175, 20, 175)); /* Gradient background */
     font-size: 20px; /* Font size */
-    color: lightgrey; /* Text color */
+    color: rgb(238, 238, 238); /* Text color */
     padding: 10px 50px; /* Padding for button */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect */
     cursor: pointer; /* Pointer cursor on hover */
