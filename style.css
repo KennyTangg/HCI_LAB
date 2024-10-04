@@ -1,0 +1,325 @@
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Set font for the body */
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 0; /* Remove default bottom margin */
+}
+
+header {
+    background-color: #ff82cd; /* Header background color */
+    color: white; /* Text color in header */
+    margin-top: 5px; /* Margin above the header */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect for depth */
+    border-radius: 15px; /* Rounded corners for header */
+}
+
+.navbar {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Padding inside navbar */
+}
+
+.navbar .logo {
+    display: flex; /* Flex display for logo area */
+}
+
+.logo a {
+    color: #fff; /* Logo text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 24px; /* Font size for logo text */
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points from list */
+    display: flex; /* Use flexbox for horizontal layout */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between navigation items */
+}
+
+.nav-links a {
+    color: #fff; /* Navigation link text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 15px; /* Padding for links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    background-color: rgb(167, 0, 167); /* Background on hover */
+    border-radius: 4px; /* Rounded corners on hover */
+}
+
+.nav-links a:active {
+    background-color: rgb(109, 0, 109); /* Background on active state */
+    border-radius: 4px; /* Rounded corners on active state */
+}
+
+.nav {
+    background: linear-gradient(to right, rgb(255, 0, 255), rgb(171, 0, 171)); /* Gradient background */
+    border-radius: 5px; /* Rounded corners for nav */
+    margin-top: 15px; /* Space above nav */
+    padding: 5px; /* Padding for nav */
+}
+
+.nav .title {
+    margin: 10px 0 15px 15px; /* Margins for title */
+}
+
+.nav .radio {
+    margin: 5px 0; /* Margins for radio buttons */
+}
+
+.header-image {
+    margin-right: 10px; /* Space between image and heading */
+    width: 50px; /* Width of header image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.show-modal {
+    font-size: 2rem; /* Font size for modal trigger */
+    font-weight: 600; /* Bold text */
+    padding: 1.75rem 3.5rem; /* Padding for button */
+    border: none; /* Remove border */
+    background-color: #fff; /* Background color */
+    color: #444; /* Text color */
+    border-radius: 10rem; /* Rounded button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.close-modal {
+    position: absolute; /* Positioning for close button */
+    top: 1.2rem; /* Position from top */
+    right: 2rem; /* Position from right */
+    font-size: 5rem; /* Size of close icon */
+    color: #333; /* Color of close icon */
+    cursor: pointer; /* Pointer cursor on hover */
+    border: none; /* Remove border */
+    background: none; /* No background */
+}
+
+.hidden {
+    display: none; /* Hide elements with this class */
+}
+
+.modal {
+    position: absolute; /* Position modal in the center */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position */
+    width: 70%; /* Modal width */
+    background-color: white; /* Modal background */
+    padding: 6rem; /* Padding inside modal */
+    border-radius: 5px; /* Rounded corners for modal */
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3); /* Shadow for modal */
+    z-index: 10; /* Ensure modal is above other content */
+}
+
+.overlay {
+    position: absolute; /* Position overlay */
+    top: 0; /* Cover full height */
+    left: 0; /* Cover full width */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    backdrop-filter: blur(3px); /* Blur effect for background */
+    z-index: 5; /* Layer below modal */
+}
+
+.homelink {
+    background-color: white; /* Background for home link */
+    cursor: pointer; /* Pointer cursor */
+    border: none; /* Remove border */
+    border-radius: 14px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+}
+
+.location {
+    font-size: 20px; /* Font size for location */
+    margin-right: 20px; /* Space to the right */
+    text-align: right; /* Align text to the right */
+}
+
+.image {
+    position: center; /* Centering properties */
+    margin-top: 10px; /* Space above image */
+    width: 100%; /* Full width of the container */
+    height: 60vh; /* Height of the image */
+    background-position: center; /* Center background image */
+    background-size: cover; /* Cover the entire area */
+    filter: blur(6px); /* Blur effect */
+    border: 1px solid black; /* Border for image */
+    border-radius: 3px; /* Rounded corners */
+}
+
+.image-container img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.text-overlay {
+    position: absolute; /* Position text overlay */
+    top: 20%; /* Position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the text */
+    color: white; /* Text color */
+    font-size: 60px; /* Font size */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font family */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+}
+
+.text-overlay2 {
+    position: absolute; /* Position text overlay */
+    top: 35%; /* Position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the text */
+    color: rgb(250, 231, 205); /* Text color */
+    font-size: 60px; /* Font size */
+    font-family: "great vibes"; /* Font family */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+}
+
+.text-overlay3 {
+    position: absolute; /* Position text overlay */
+    top: 45%; /* Position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the text */
+    color: white; /* Text color */
+    font-size: 60px; /* Font size */
+    font-weight: lighter; /* Lighter text */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font family */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+}
+
+.section {
+    background-color: pink; /* Background color for sections */
+    border-radius: 10px; /* Rounded corners */
+    border: #ff82cd; /* Border color */
+    margin-bottom: 10px; /* Space below sections */
+    padding-left: 15px; /* Left padding */
+    padding-top: 1px; /* Top padding */
+    padding-bottom: 10px; /* Bottom padding */
+}
+
+.section .about {
+    font-family: 'Open Sans'; /* Font for about section */
+    font-size: 30px; /* Font size */
+    color: purple; /* Text color */
+    margin: 10px 0 5px 5px; /* Margins */
+    padding-top: 5px; /* Top padding */
+}
+
+.section .cuisine {
+    font-family: 'Open Sans'; /* Font for cuisine section */
+    font-size: 20px; /* Font size */
+    margin: 5px 0 10px 5px; /* Margins */
+    padding-top: 5px; /* Top padding */
+}
+
+.section .desc {
+    font-family: 'Open Sans'; /* Font for description */
+    font-size: 20px; /* Font size */
+    color: rgb(100, 99, 99); /* Text color */
+    margin-top: 5px; /* Space above description */
+    width: 475px; /* Fixed width */
+}
+
+.section .radio {
+    font-family: "great vibes"; /* Font for radio options */
+    font-size: 20px; /* Font size */
+}
+
+.article {
+    display: block; /* Display as block */
+    background: linear-gradient(to bottom, rgb(255, 28, 255), rgb(120, 13, 120)); /* Gradient background */
+    margin: 10px 0 0 5px; /* Margins */
+    padding: 5px 0; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.article .title {
+    font-family: "great vibes"; /* Font for article title */
+    font-size: 40px; /* Font size */
+    text-align: center; /* Center align text */
+    color: white; /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+    margin: 1rem 0 0; /* Margins */
+}
+
+.article .list {
+    margin: 10px 0 5px 30rem; /* Margins */
+    padding: 5px 0; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for readability */
+    background: linear-gradient(to bottom, rgb(252, 176, 237), rgb(207, 127, 190)); /* Gradient background */
+}
+
+.popular {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the start */
+    justify-content: space-around; /* Space between items */
+    background: linear-gradient(to right, rgb(252, 143, 230), rgb(255, 202, 245)); /* Gradient background */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 15px; /* Space above popular section */
+    padding: 5px 25px; /* Padding */
+}
+
+.populardish {
+    font-weight: bold; /* Bold text for popular dishes */
+    margin-bottom: 5px; /* Space below dish names */
+    color: white; /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+}
+
+.populartext {
+    margin-top: 5px; /* Space above text */
+    width: 450px; /* Fixed width */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for readability */
+}
+
+.right-image {
+    max-width: 21rem; /* Maximum width for right images */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20px; /* Space to the left */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.right-image3 {
+    max-width: 20rem; /* Maximum width for smaller right images */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20px; /* Space to the left */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.button {
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    background: linear-gradient(to bottom, rgb(244, 143, 224), rgb(175, 20, 175)); /* Gradient background */
+    font-size: 20px; /* Font size */
+    color: lightgrey; /* Text color */
+    padding: 10px 50px; /* Padding for button */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.button:hover {
+    background: linear-gradient(to bottom, rgb(187, 111, 172), rgb(133, 80, 122)); /* Hover background */
+}
+
+.button:active {
+    background: linear-gradient(to bottom, rgb(143, 83, 131), rgb(143, 85, 130)); /* Active state background */
+}
+
+.footer {
+    position: relative; /* Position relative for layout */
+    background-color: rgb(175, 20, 175); /* Background color for footer */
+    color: white; /* Text color */
+    font-family: 'Times New Roman', Times, serif; /* Font family */
+    padding: 20px; /* Padding inside footer */
+    text-align: center; /* Center text */
+    width: 100%; /* Full width of the page */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
