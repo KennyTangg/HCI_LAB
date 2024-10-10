@@ -1,7 +1,12 @@
 body {
-    font-family: Arial, Helvetica, sans-serif; /* Set font for the body */
-    margin-top: 0; /* Remove default top margin */
-    margin-bottom: 0; /* Remove default bottom margin */
+    font-family: "Raleway"; /* Set font for the body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-image: url(/HCI_LAB/images/solaria_background.jpg);
+    background-size: cover; /* Scale the image to cover the area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
 }
 
 header {
@@ -11,7 +16,20 @@ header {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect for depth */
     border-radius: 15px; /* Rounded corners for header */
 }
-
+@media (max-width: 750px) {
+    .text-overlay {
+        top: 15%; /* Adjust for smaller screens */
+        font-size: 2em; 
+    }
+    .text-overlay2 {
+        top: 30%; /* Adjust for smaller screens */
+        font-size: 1.5em; 
+    }
+    .text-overlay3 {
+        top: 45%; /* Adjust for smaller screens */
+        font-size: 1.2em; 
+    }
+}
 .navbar {
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space between items */
@@ -45,6 +63,8 @@ header {
     text-decoration: none; /* Remove underline from links */
     padding: 8px 15px; /* Padding for links */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+    border-radius: 4px; /* Rounded corners on hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for readability */
 }
 
 .nav-links a:hover {
@@ -142,109 +162,119 @@ header {
     text-align: right; /* Align text to the right */
 }
 
-.image {
-    position: center; /* Centering properties */
-    margin-top: 10px; /* Space above image */
-    width: 100%; /* Full width of the container */
-    height: 60vh; /* Height of the image */
-    background-position: center; /* Center background image */
-    background-size: cover; /* Cover the entire area */
-    filter: blur(6px); /* Blur effect */
-    border: 1px solid black; /* Border for image */
-    border-radius: 3px; /* Rounded corners */
-}
-
 .image-container img {
     width: 100%; /* Full width for images */
     height: auto; /* Maintain aspect ratio */
 }
 
+.image {
+    display: block; /* Ensure it’s treated as a block element */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    margin-top: 4rem; /* Space above image */
+    width: 80%; /* Full width of the container */
+    height: 70vh; /* Height of the image */
+    border: none;
+    border-radius: 1rem; /* Rounded corners */
+    position:relative;
+}
+
+.text{
+    position: relative; /* Positioning context for absolute children */
+    height: 90vh; /* Match height of the image */
+}
+.text-overlay, .text-overlay2, .text-overlay3 {
+    position:absolute;
+    left:50%;
+    margin:0;
+    transform: translateX(-50%); /* Center horizontally using transform */
+    color: white; /* Text color */
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font family */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+}
 .text-overlay {
-    position: absolute; /* Position text overlay */
-    top: 20%; /* Position from the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center the text */
-    color: white; /* Text color */
-    font-size: 60px; /* Font size */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font family */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+    font-size: 3.5em; /* Adjust font size */
+    top: 15%; /* Adjust vertical position */
 }
-
 .text-overlay2 {
-    position: absolute; /* Position text overlay */
-    top: 35%; /* Position from the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center the text */
-    color: rgb(250, 231, 205); /* Text color */
-    font-size: 60px; /* Font size */
-    font-family: "great vibes"; /* Font family */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+    font-size: 3em; /* Adjust font size */
+    top: 35%; /* Adjust vertical position */
+    font-family:"great vibes";
 }
-
 .text-overlay3 {
-    position: absolute; /* Position text overlay */
-    top: 45%; /* Position from the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center the text */
-    color: white; /* Text color */
-    font-size: 60px; /* Font size */
-    font-weight: lighter; /* Lighter text */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font family */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+    font-size: 3em; /* Adjust font size */
+    top: 55%; /* Adjust vertical position */
 }
 
 .section {
-    background-color: pink; /* Background color for sections */
-    border-radius: 10px; /* Rounded corners */
-    border: #ff82cd; /* Border color */
-    margin-bottom: 10px; /* Space below sections */
-    padding-left: 15px; /* Left padding */
-    padding-top: 1px; /* Top padding */
-    padding-bottom: 10px; /* Bottom padding */
+    display:flex;
+    justify-content: space-around;
+    background-color: rgba(251, 233, 236,0.95); /* Background color for sections */
+    margin-top: 0.5rem;
+    padding-left: 15rem; /* Left padding */
+    padding-top: 1rem; /* Top padding */
+    padding-bottom: 1rem; /* Bottom padding */
 }
-
 .section .about {
-    font-family: 'Open Sans'; /* Font for about section */
     font-size: 30px; /* Font size */
-    color: purple; /* Text color */
+    font-weight:400;
     margin: 10px 0 5px 5px; /* Margins */
     padding-top: 5px; /* Top padding */
+    
 }
-
-.section .cuisine {
-    font-family: 'Open Sans'; /* Font for cuisine section */
-    font-size: 20px; /* Font size */
-    margin: 5px 0 10px 5px; /* Margins */
-    padding-top: 5px; /* Top padding */
-}
-
 .section .desc {
-    font-family: 'Open Sans'; /* Font for description */
     font-size: 20px; /* Font size */
-    color: rgb(100, 99, 99); /* Text color */
+    color: rgb(100, 100, 100); /* Text color */
     margin-top: 5px; /* Space above description */
     width: 475px; /* Fixed width */
 }
+.section .image {
+    width: 33%;
+    height: 15rem;
+    margin-right:12rem;
+    border-radius: 1rem;
+}
 
-.section .radio {
-    font-family: "great vibes"; /* Font for radio options */
+.section2 {
+    display:flex;
+    justify-content: space-around;
+    background-color: rgba(247, 212, 218,0.95); /* Background color for sections */
+    padding-right: 15rem; /* Left padding */
+    padding-top: 1rem; /* Top padding */
+    padding-bottom: 2rem; /* Bottom padding */
+    text-align: right;
+}
+.section2 .cuisine {
     font-size: 20px; /* Font size */
+    font-weight:500; 
+    margin: 5px 0 10px 5px; /* Margins */
+    padding-top: 5px; /* Top padding */
+}
+.section2 .radio {
+    display: flex;
+    justify-content: flex-end;
+}
+.section2 .image {
+    width: 30%;
+    height: 10rem;
+    margin-left:12rem;
+    border-radius: 1rem;
 }
 
 .article {
-    display: block; /* Display as block */
-    background: linear-gradient(to bottom, rgb(255, 28, 255), rgb(120, 13, 120)); /* Gradient background */
     margin: 10px 0 0 5px; /* Margins */
     padding: 5px 0; /* Padding */
     border-radius: 10px; /* Rounded corners */
+    text-align: center;
 }
 
 .article .title {
     font-family: "great vibes"; /* Font for article title */
     font-size: 40px; /* Font size */
     text-align: center; /* Center align text */
-    color: white; /* Text color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+    color: black; /* Text color */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Shadow for readability */
     margin: 1rem 0 0; /* Margins */
 }
 
@@ -257,7 +287,7 @@ header {
     border-radius: 5px; /* Rounded corners */
     font-weight: bold; /* Bold text */
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for readability */
-    background: linear-gradient(to bottom, rgb(252, 176, 237), rgb(207, 127, 190)); /* Gradient background */
+    background: linear-gradient(to bottom, rgba(252, 176, 237,0.9), rgb(255, 149, 234,0.9)); /* Gradient background */
 }
 
 .popular {
@@ -315,14 +345,21 @@ header {
 .button:active {
     background: linear-gradient(to bottom, rgb(143, 83, 131), rgb(143, 85, 130)); /* Active state background */
 }
+.image-box{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if the container has a height */
 
+}
 .footer {
     position: relative; /* Position relative for layout */
-    background-color: rgb(175, 20, 175); /* Background color for footer */
+    background-color:rgb(173, 120, 186); /* Background color for footer */
     color: white; /* Text color */
     font-family: 'Times New Roman', Times, serif; /* Font family */
     padding: 20px; /* Padding inside footer */
     text-align: center; /* Center text */
     width: 100%; /* Full width of the page */
     box-sizing: border-box; /* Include padding in width calculations */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 10rem;
 }
