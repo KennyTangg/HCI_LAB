@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kenny Tang">
-    <title>Restaurant Assignment Week 2 </title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS for styling -->
+    <title>Restaurant HCI Assignment</title>
+    <link rel="stylesheet" href="stylesheets/style.css"> <!-- Link to external CSS for styling -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"> <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"> <!-- Google Fonts -->
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="Solaria2.png" alt="Picture of Solaria Restaurant" class="header-image"></a> <!-- Logo image -->
-                <div class="logo-title">
-                    <h1>Solaria</h1> <!-- Title for Restaurant Name -->
-                </div>
+    <header>
+        <nav class="navbarmenu">
+            <div>
+                <a href="index.html"><img src="images/Solaria2.png" alt="Picture of Solaria Restaurant" class="header-image"></a> <!-- Logo image -->
             </div>
             <ul class="nav-links"> <!-- Navigation links for the website -->
                 <li><a href="index.html">Home</a></li>
-                <li><a href="menus.html">Menus</a></li>
-                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="menus.html">Menu</a></li>
+                <li><a href="promotions.html">Promotion</a></li>
             </ul>
         </nav>
     </header>
 
-    <article class="article"> <!-- Main content area for menus -->
-        <h3 id="menus" class="title"> ~ Menus ~ </h3> <!-- Header for the menu section -->
-        <ul>
+    <article class="menu"> <!-- Main content area for menus -->
+        <h3 id="menus" class="title"> ~ Menu ~ </h3> <!-- Header for the menu section -->
+        <ul class="buttons">
             <li><button class="button show-modal"> Menu Spesial </button> <!-- Button to show special menu -->
                     <ol class="list hidden"> <!-- List of special menu items, initially hidden -->
                         <li> Spaghetti Bolognese                    : Rp23.000 </li>
@@ -165,7 +163,13 @@
             </li>
         </ul>
         </div>
-        <script src="script.js"></script>
+        <script src="script/script.js"></script>
         </article>
+    <footer class="footer">
+        <div class="footer-content">
+            <h3> Location - Contact Info : <span style="font-weight: lighter; color:rgb(230, 230, 230);"> FX Sudirman - 0812 3456 789 </span></h3> <!-- Location and Contact Info -->
+            <p>Kenny Tang / 2802517733</p> <!-- My name and NIM -->
+        </div>
+    </footer>
 </body>
 </html>
