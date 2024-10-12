@@ -1,103 +1,286 @@
+/* Global Reset and Basic Styling */
+* {
+    margin: 0; /* Reset default margin for all elements */
+    padding: 0; /* Reset default padding for all elements */
+    box-sizing: border-box; /* Standard box model */
+    text-decoration: none; /* Remove default link underlines */
+    font-family: "Raleway"; /* Set the default font for the entire document to "Raleway" */
+    overflow-x: clip; /* Prevent horizontal scrolling */
+}
 body {
-    font-family: "Raleway"; /* Set font for the body */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    background-image: url(/HCI_LAB/images/solaria_background.jpg);
-    background-size: cover; /* Scale the image to cover the area */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed; /* Keep the background fixed during scroll */
+    background-image: url(/HCI_LAB/images/solaria_background.jpg); /* Set the background image for the body */
+    background-size: cover; /* Scale the background image to cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-attachment: fixed; /* Keep background fixed during scroll */
+}
+header {
+    background-color: rgba(255, 130, 205, 0.5); /* Header background */
+    color: white; /* Header text color */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+    border-radius: 15px; /* Rounded corners */
 }
 
-header {
-    background-color: #ff82cd; /* Header background color */
-    color: white; /* Text color in header */
-    margin-top: 5px; /* Margin above the header */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect for depth */
-    border-radius: 15px; /* Rounded corners for header */
+/* Animation */
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5; /* Start small and invisible */
+    }
+    to {
+        opacity: 1;
+        scale: 1; /* End fully visible and scaled */
+    }
 }
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    .section .desc {
+        width: 90%; /* More flexible description width */
+    }
+    .section {
+        padding: 1rem 5%; /* Reduced padding */
+    }
+    .section .image {
+        width: 60%; /* Adjust image size */
+    }
+    .sosialmedia {
+        height: 300px; /* Fixed height for social media section */
+    }
+    .popular {
+        flex-direction: column; /* Stack popular items */
+    }
+}
+
 @media (max-width: 750px) {
-    .text-overlay {
-        top: 15%; /* Adjust for smaller screens */
-        font-size: 2em; 
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Left align items */
     }
-    .text-overlay2 {
-        top: 30%; /* Adjust for smaller screens */
-        font-size: 1.5em; 
+    .navbarmenu {
+        padding: 10px; /* Adjust padding */
     }
-    .text-overlay3 {
-        top: 45%; /* Adjust for smaller screens */
-        font-size: 1.2em; 
+    .home {
+        justify-content: center !important; /* Center home content */
+    }
+    .home .max-width .home-content {
+        text-align: center; /* Center text in home */
+    }
+    /* Adjust text sizes for smaller screens */
+    .home .max-width .home-content .text-1 { font-size: 36px; }
+    .home .max-width .home-content .text-2 { font-size: 20px; }
+    .home .max-width .home-content .text-3 { font-size: 24px; }
+
+    .nav-links {
+        justify-content: center; /* Center nav links */
+    }
+    .section {
+        flex-direction: column; /* Stack section items */
+        align-items: center; /* Center section items */
+        padding: 1rem; /* Add padding */
+    }
+    .section .image {
+        width: 80%; /* Responsive image width */
+        margin: 1rem 0; /* Vertical spacing */
+    }
+    /* Adjust text overlay positions */
+    .text-overlay { top: 15%; font-size: 2em; }
+    .text-overlay2 { top: 30%; font-size: 1.5em; }
+    .text-overlay3 { top: 45%; font-size: 1.2em; }
+    
+    .sosialmedia {
+        flex-direction: column; /* Stack social media items */
+        height: auto; /* Adjust height */
+        border-radius: none; /* Remove border radius */
+    }
+    
+    .sosialmedia .image {
+        width: 150px; /* Smaller image size */
+        height: 150px; /* Maintain aspect ratio */
+    }
+    .image-container2 {
+        flex-direction: column; /* Stack images */
+    }
+    .right-image {
+        max-width: 100%; /* Responsive images */
+        height: auto; /* Maintain aspect ratio */
     }
 }
-.navbar {
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align left */
+    }
+    .home .max-width {
+        margin: 0; padding: 0; /* Reset margins and paddings */
+    }
+    .home-content {
+        align-items: center; /* Center align */
+        height: auto; /* Adjust height */
+        padding: 20px; /* Add padding */
+    }
+    .home .max-width .home-content {
+        text-align: center; /* Center text */
+        align-items: center; /* Center items */
+    }
+    /* Adjust font sizes */
+    .home .max-width .home-content .text-1 { font-size: 28px; }
+    .home .max-width .home-content .text-2 { font-size: 16px; }
+    .home .max-width .home-content .text-3 { font-size: 20px; }
+    .section {
+        flex-direction: column; /* Stack sections */
+        align-items: center; /* Center align */
+        padding: 1rem; /* Add padding */
+    }
+    .section .desc {
+        width: 250px; /* Flexible description width */
+        font-size: 18px; /* Adjust font size */
+        text-align: center; /* Center align */
+    }
+    .section .image {
+        display: block; /* Block display */
+        width: 100%; /* Responsive */
+        max-width: 150px; /* Max width */
+        min-width: 100px; /* Min width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px auto; /* Center and space */
+    }
+    .section2 {
+        flex-direction: column; /* Stack items */
+        align-items: center; /* Center align */
+        padding: 20px; /* Add padding */
+    }
+    .section2 .cuisine {
+        font-size: 18px; /* Smaller font */
+        text-align: center; /* Center align */
+    }
+    .section2 .radio {
+        justify-content: center; /* Center radio buttons */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+    .specialfeature {
+        flex-direction: column; /* Stack special features */
+    }
+    .specialfeature .checkbox {
+        justify-content: center; /* Center checkboxes */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+    .footer {
+        font-size: 12px; /* Smaller footer text */
+        padding: 10px; /* Adjust padding */
+    }
+    .footer-content h3 {
+        font-size: 14px; /* Smaller header font */
+    }
+    /* Adjust button sizes */
+    .button {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 16px; /* Smaller font size */
+    }
+    .sosialmediatitle {
+        font-size: 1.5rem; /* Smaller title size */
+    }
+    .ptitle {
+        font-size: 30px; /* Smaller title font size */
+    }
+}
+
+/* Maximum Width for Layout */
+.max-width {
+    max-width: 1300px; /* Max width for main content */
+    padding: 0 80px; /* Padding for main content */
+}
+
+/* Navbar styling */
+.navbar, .navbarmenu, .navbar .max-width {
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space between items */
     align-items: center; /* Center items vertically */
     padding: 10px 20px; /* Padding inside navbar */
 }
-
-.navbar .logo {
-    display: flex; /* Flex display for logo area */
+.navbar {
+    position: absolute; /* Position navbar absolutely within the parent */
+    width: 100%; /* Full width of the viewport */
+    background: rgba(255, 137, 255, 0); /* Transparent background */
+    border: none; /* No border around the navbar */
+}
+.navbarmenu {
+    background: linear-gradient(to top, rgb(244, 143, 224), rgb(175, 20, 175));/* Gradient background for the menu */
+} 
+.navbar .max-width {justify-content: space-between;} /* Ensure items are spaced evenly within this section */
+.navbar .menu li a {
+    color: white; /* Text color for links */
+    list-style: none; /* Remove default list styling */
+    display: inline-block; /* Display links inline */
+    font-size: 18px; /* Font size for links */
+    font-weight: 500; /* Font weight for links */
+    margin-left: 25px; /* Space between links */
 }
 
-.logo a {
-    color: #fff; /* Logo text color */
-    text-decoration: none; /* Remove underline from links */
-    font-size: 24px; /* Font size for logo text */
+/* Home Section Styling */
+.home {
+    display: flex; /* Use flexbox for layout to position content */
+    justify-content: left; /* Align items to the left */
+    align-items: center; /* Center items vertically */
+    background: linear-gradient( /* Overlay gradient for visual effect */
+        rgba(0, 0, 0, 0.4), /* Dark overlay to enhance text readability */
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.1)
+    ),
+    url("/HCI_LAB/images/solaria_store.jpg") no-repeat center center; /* Background image with no-repeat, centered */
+    background-size: cover; /* Cover the entire section */
+    color: white; /* Text color */
+    min-height: 500px; /* Minimum height to ensure visibility */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width of the viewport */
+}
+.home .home-content .text-1 {
+    font-size: 75px; /* Large font size for emphasis */
+    font-weight: 600; /* Semi-bold font weight */
+    margin-left: -3px; /* Slight left margin for alignment */
+    margin-bottom: 10px; /* Space below this text */
+}
+.home .home-content .text-2 {
+    font-size: 27px; /* Medium font size for subheading */
+    margin-bottom: 5px; /* Space below this text */
+}
+.home .home-content .text-3 {
+    font-size: 40px; /* Larger font size for emphasis */
+    margin: 5px 0; /* Space above and below this text */
 }
 
+/* Navigation links styling */
 .nav-links {
     list-style: none; /* Remove bullet points from list */
     display: flex; /* Use flexbox for horizontal layout */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
 }
-
 .nav-links li {
-    margin: 0 15px; /* Space between navigation items */
+    margin: 5px 15px; /* Space between navigation items */
 }
-
 .nav-links a {
+    display: inline-block; /* Inline-block for padding */
     color: #fff; /* Navigation link text color */
     text-decoration: none; /* Remove underline from links */
     padding: 8px 15px; /* Padding for links */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-    border-radius: 4px; /* Rounded corners on hover */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for readability */
+    border-radius: 4px; /* Rounded corners */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for better readability */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions for effects */
 }
-
 .nav-links a:hover {
-    background-color: rgb(167, 0, 167); /* Background on hover */
-    border-radius: 4px; /* Rounded corners on hover */
+    /* when hovering*/
+    transform: translateY(10px); /* Move link down on hover */
+    background-color: rgb(167, 0, 167); /* Change background color on hover */
 }
-
 .nav-links a:active {
-    background-color: rgb(109, 0, 109); /* Background on active state */
-    border-radius: 4px; /* Rounded corners on active state */
+    /* when clicking */
+    background-color: rgb(109, 0, 109); /* Darker background on active state */
 }
-
-.nav {
-    background: linear-gradient(to right, rgb(255, 0, 255), rgb(171, 0, 171)); /* Gradient background */
-    border-radius: 5px; /* Rounded corners for nav */
-    margin-top: 15px; /* Space above nav */
-    padding: 5px; /* Padding for nav */
-}
-
-.nav .title {
-    margin: 10px 0 15px 15px; /* Margins for title */
-}
-
-.nav .radio {
-    margin: 5px 0; /* Margins for radio buttons */
-}
-
 .header-image {
-    margin-right: 10px; /* Space between image and heading */
-    width: 50px; /* Width of header image */
+    width: 70px; /* Fixed width for header image */
     height: auto; /* Maintain aspect ratio */
 }
-
+/* Javascript classes*/
 .show-modal {
     font-size: 2rem; /* Font size for modal trigger */
     font-weight: 600; /* Bold text */
@@ -108,7 +291,6 @@ header {
     border-radius: 10rem; /* Rounded button */
     cursor: pointer; /* Pointer cursor on hover */
 }
-
 .close-modal {
     position: absolute; /* Positioning for close button */
     top: 1.2rem; /* Position from top */
@@ -119,11 +301,9 @@ header {
     border: none; /* Remove border */
     background: none; /* No background */
 }
-
 .hidden {
     display: none; /* Hide elements with this class */
 }
-
 .modal {
     position: absolute; /* Position modal in the center */
     top: 50%; /* Center vertically */
@@ -136,221 +316,232 @@ header {
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3); /* Shadow for modal */
     z-index: 10; /* Ensure modal is above other content */
 }
-
-.overlay {
-    position: absolute; /* Position overlay */
-    top: 0; /* Cover full height */
-    left: 0; /* Cover full width */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-    backdrop-filter: blur(3px); /* Blur effect for background */
-    z-index: 5; /* Layer below modal */
+/* About Solaria Styling */
+.section, .section2 {
+    display: flex; /* This enables flexbox for layout management */
+    justify-content: space-around; /* Adjust space distribution among child elements */
+    padding: 2rem; /* Use rem units for responsive padding */
+    margin: 0; /* Avoid fixed margins to prevent overflow issues */
 }
-
-.homelink {
-    background-color: white; /* Background for home link */
-    cursor: pointer; /* Pointer cursor */
-    border: none; /* Remove border */
-    border-radius: 14px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
+.section .desc, .section .image,.section2 .cuisine, .section2 .radio, .section2 .image{
+    /* animation */
+    animation: appear linear; /* Sets the animation to appear with a linear transition */
+    animation-timeline: view(); /* Specifies the timing function for the animation */
+    animation-range: entry cover 40%; /* Defines the entry animation range and coverage */
 }
-
-.location {
-    font-size: 20px; /* Font size for location */
-    margin-right: 20px; /* Space to the right */
-    text-align: right; /* Align text to the right */
-}
-
-.image-container img {
-    width: 100%; /* Full width for images */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.image {
-    display: block; /* Ensure it’s treated as a block element */
-    margin-left: auto; /* Center horizontally */
-    margin-right: auto; /* Center horizontally */
-    margin-top: 4rem; /* Space above image */
-    width: 80%; /* Full width of the container */
-    height: 70vh; /* Height of the image */
-    border: none;
-    border-radius: 1rem; /* Rounded corners */
-    position:relative;
-}
-
-.text{
-    position: relative; /* Positioning context for absolute children */
-    height: 90vh; /* Match height of the image */
-}
-.text-overlay, .text-overlay2, .text-overlay3 {
-    position:absolute;
-    left:50%;
-    margin:0;
-    transform: translateX(-50%); /* Center horizontally using transform */
-    color: white; /* Text color */
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font family */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
-}
-.text-overlay {
-    font-size: 3.5em; /* Adjust font size */
-    top: 15%; /* Adjust vertical position */
-}
-.text-overlay2 {
-    font-size: 3em; /* Adjust font size */
-    top: 35%; /* Adjust vertical position */
-    font-family:"great vibes";
-}
-.text-overlay3 {
-    font-size: 3em; /* Adjust font size */
-    top: 55%; /* Adjust vertical position */
-}
-
 .section {
-    display:flex;
-    justify-content: space-around;
-    background-color: rgba(251, 233, 236,0.95); /* Background color for sections */
-    margin-top: 0.5rem;
-    padding-left: 15rem; /* Left padding */
-    padding-top: 1rem; /* Top padding */
-    padding-bottom: 1rem; /* Bottom padding */
-}
-.section .about {
-    font-size: 30px; /* Font size */
-    font-weight:400;
-    margin: 10px 0 5px 5px; /* Margins */
-    padding-top: 5px; /* Top padding */
-    
+    background-color: rgba(251, 233, 236, 0.95); /* Light background color for better visibility */
+    text-align: left; /* Align text to the left */
 }
 .section .desc {
-    font-size: 20px; /* Font size */
-    color: rgb(100, 100, 100); /* Text color */
-    margin-top: 5px; /* Space above description */
-    width: 475px; /* Fixed width */
-}
-.section .image {
-    width: 33%;
-    height: 15rem;
-    margin-right:12rem;
-    border-radius: 1rem;
+    font-size: 20px; /* Font size for description text */
+    color: rgb(100, 100, 100); /* Dark gray text color for better readability */
+    margin: 5px 0 0 1rem; /* Space above the description text and left margin for indentation */
+    width: 470px; /* Fixed width for the description area */
+    min-width: 200px; /* Ensure a minimum width for readability on smaller screens */
+    max-width: 100%; /* Allow full width on very small screens for responsiveness */
+    padding-right: 1rem; /* Right padding for spacing */
 }
 
+/* Styling for images within the section */
+.section .image {
+    width: 100%; /* Default width to fill the container */
+    max-width: 300px; /* Maximum width to prevent image from growing too large */
+    min-width: 100px; /* Minimum width to prevent image from shrinking too much */
+    height: auto; /* Maintain the aspect ratio of the image */
+    margin: 10px 0; /* Vertical margins for spacing */
+    border-radius: 1rem; /* Rounded corners for a softer look */
+}
+
+/* Cuisine Type Styling */
 .section2 {
-    display:flex;
-    justify-content: space-around;
-    background-color: rgba(247, 212, 218,0.95); /* Background color for sections */
-    padding-right: 15rem; /* Left padding */
-    padding-top: 1rem; /* Top padding */
-    padding-bottom: 2rem; /* Bottom padding */
-    text-align: right;
+    background-color: rgba(247, 212, 218, 0.95); /* Background color for sections with slight transparency */
+    text-align: right; /* Align text to the right */
 }
 .section2 .cuisine {
-    font-size: 20px; /* Font size */
-    font-weight:500; 
-    margin: 5px 0 10px 5px; /* Margins */
-    padding-top: 5px; /* Top padding */
+    font-size: 30px; /* Font size for cuisine text */
+    font-weight: 400; /* Normal font weight */
+    margin: 5px 0 10px 5px; /* Margins: top, right, bottom, left */
+    padding-top: 5px; /* Top padding for additional spacing */
 }
 .section2 .radio {
-    display: flex;
-    justify-content: flex-end;
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the right */
+}
+.section2 .radio label {
+    margin-right: 15px; /* Space between labels */
+    font-size: 20px; /* Font size for labels */
 }
 .section2 .image {
-    width: 30%;
-    height: 10rem;
-    margin-left:12rem;
-    border-radius: 1rem;
+    width: 100%; /* Default width to fill container */
+    max-width: 300px; /* Maximum width to prevent image from growing too large */
+    min-width: 100px; /* Minimum width to prevent image from shrinking too much */
+    height: auto; /* Maintain aspect ratio of the image */
+    margin: 10px 0; /* Vertical margins for spacing */
+    border-radius: 1rem; /* Rounded corners for the image */
 }
 
-.article {
+/* Menus styling */
+.menu {
     margin: 10px 0 0 5px; /* Margins */
-    padding: 5px 0; /* Padding */
-    border-radius: 10px; /* Rounded corners */
-    text-align: center;
+    padding: 5px 0; /* Padding*/
+    border-radius: 10px; /* Rounded corners for a softer appearance */
+    max-width: 80%; /* Maximum width set to 80% of the parent container */
+    left: 10%; /* Positioning the menu 10% from the left */
+    position: relative; /* Allows absolute positioning of child elements if needed */
 }
-
-.article .title {
-    font-family: "great vibes"; /* Font for article title */
-    font-size: 40px; /* Font size */
-    text-align: center; /* Center align text */
-    color: black; /* Text color */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Shadow for readability */
-    margin: 1rem 0 0; /* Margins */
+.menu .title {
+    font-family: "great vibes"; /* Custom font for the article title */
+    font-size: 40px; /* Font size for the title */
+    text-align: center; /* Center align the title text */
+    color: black; /* Text color for visibility */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Soft shadow for improved readability */
+    margin: 1rem 0; /* Margins: 1rem top and bottom, no left or right margins */
 }
-
-.article .list {
-    margin-top:10px; /* Margin */
-    margin-right:35rem; /* Margin */
-    padding-top: 10px ; /* Padding */
-    padding-bottom: 10px ; /* Padding */
-    padding-left: 45px ; /* Padding */
-    border-radius: 5px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for readability */
-    background: linear-gradient(to bottom, rgba(252, 176, 237,0.9), rgb(255, 149, 234,0.9)); /* Gradient background */
+.menu .buttons {
+    list-style-type: none; /* Remove default bullets from list items */
+    text-align: center; /* Center align button list items */
 }
-
-.popular {
+.menu .list {
+    margin-top: 1rem; /* Margin above the list */
+    margin-bottom: 1rem; /* Margin below the list */
+    padding: 10px 3rem; /* Padding: 10px vertically, 3rem horizontally */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    font-weight: bold; /* Make the text bold for emphasis */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for improved readability */
+    background: linear-gradient(to bottom, rgba(252, 242, 243, 0.9), rgba(255, 225, 230, 0.9)); /* Gradient background for visual interest */
+}
+/* Social Media links Styling */
+.sosialmediatitle {
+    margin-top: 1rem; /* Margin at the top of the title */
+    text-align: center; /* Center align the title text */
+    font-size: 2rem; /* Font size for the title */
+}
+.sosialmedia {
     display: flex; /* Use flexbox for layout */
-    align-items: flex-start; /* Align items to the start */
-    justify-content: space-around; /* Space between items */
-    background: linear-gradient(to right, rgb(252, 143, 230), rgb(255, 202, 245)); /* Gradient background */
-    border-radius: 10px; /* Rounded corners */
-    margin-top: 15px; /* Space above popular section */
-    padding: 5px 25px; /* Padding */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically within the container */
+    margin: 1rem 0 5rem; /* Margin: top 1rem, bottom 5rem, no left or right margin */
+    padding: 2rem; /* Padding around the content */
+    background-color: rgba(255, 204, 212, 0.8); /* Semi-transparent pink background color */
+    border-radius: 3rem; /* Rounded corners for the container */
+    height: auto; /* Automatic height based on content */
+}
+.sosialmedia a {
+    height: 100%; /* Full height of the parent container */
+    width: 100%; /* Full width of the parent container */
+    display: flex; /* Use flexbox for layout within the anchor */
+    margin: 1rem 0; /* Vertical margins around the anchor */
+}
+.sosialmedia .image {
+    display: block; /* Display as a block element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 200px; /* Fixed height for the image */
+    width: 200px; /* Fixed width for the image */
+    margin: auto; /* Center the image horizontally */
+    border: 1px solid white; /* White border around the image */
+    transition: all 0.3s ease-in-out; /* Smooth transition effect for transformations */
+}
+.sosialmedia .image:hover {
+    /* when hovering */
+    transform: scale(1.2); /* Scale the image up by 20% on hover */
 }
 
-.populardish {
-    font-weight: bold; /* Bold text for popular dishes */
-    margin-bottom: 5px; /* Space below dish names */
+/* Special feature styling */
+.specialfeature {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Distribute space evenly between child elements */
+    align-items: center; /* Center items vertically within the container */
+    background-color: rgb(255, 202, 245); /* Light pink background color */
+    padding: 2rem; /* Padding inside the container */
+    margin-top: 12.5rem; /* Space above the special features section */
+}
+.specialfeature .checkbox {
+    display: flex; /* Use flexbox for layout of checkboxes */
+}
+.specialfeature .checkbox label {
+    margin-right: 15px; /* Space to the right of each label */
+    font-size: 20px; /* Font size for the labels */
+}
+
+/* Popular dishes styling */
+.ptitle {
+    padding: 1rem 0 1rem 1rem; /* Paddings */
+    margin-top: 1rem; /* Margin at the top  */
+    font-size: 40px; /* Font size for the title */
     color: white; /* Text color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better readability */
 }
-
-.populartext {
-    margin-top: 5px; /* Space above text */
-    width: 450px; /* Fixed width */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for readability */
+.popular {
+    background: linear-gradient(to right, rgb(252, 143, 230), rgb(255, 202, 245)); /* Gradient background for visual appeal */
+    padding: 5px 25px; /* Padding for internal spacing */
+    display: flex; /* Flexbox layout for child elements */
 }
-
+.dishes {
+    flex: 1; /* Allows this section to grow and fill available space */
+    margin-right: 20px; /* Space between text and images on the right */
+}
+.image-container2 {
+    display: flex; /* Flexbox for layout to align images horizontally */
+    flex: 1; /* Allows this section to grow and fill available space */
+    justify-content: space-between; /* Space between images */
+}
+.left-images {
+    display: flex; /* Flexbox for layout of left images */
+    flex-direction: column; /* Stack the first two images vertically */
+    margin-right: 10px; /* Space between left images and right image */
+}
 .right-image {
-    max-width: 21rem; /* Maximum width for right images */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: 20px; /* Space to the left */
-    border-radius: 5px; /* Rounded corners */
+    max-width: 350px; /* Set a larger maximum width for images */
+    height: auto; /* Maintain aspect ratio for images */
+    margin: 10px 0; /* Space above and below the image */
+    border-radius: 5px; /* Rounded corners for image presentation */
 }
 
-.right-image3 {
-    max-width: 20rem; /* Maximum width for smaller right images */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: 20px; /* Space to the left */
-    border-radius: 5px; /* Rounded corners */
+.populardish1, .populardish2, .populardish3 {
+    font-weight: bold; /* Bold text for emphasis on popular dishes */
+    margin-bottom: 5px; /* Space below each dish name to separate them */
+    color: white; /* Text color for contrast against the background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better readability against backgrounds */
 }
 
+.populartext1, .populartext2, .populartext3 {
+    margin-top: 5px; /* Space above the text to separate from the previous element */
+    margin-bottom: 1rem; /* Space below the text for separation from the next element */
+    min-width: 200px; /* Ensure a minimum width for readability */
+    max-width: 100%; /* Allow full width on very small screens */
+    width: 450px; /* Fixed width for descriptions to maintain consistency */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Shadow for better readability */
+}
+
+.left-images, .right-image, .populardish1, .populardish2, 
+.populardish3, .populartext1, .populartext2, .populartext3{ 
+    /* Animation */
+    animation: appear linear; /* Sets the animation to appear with a linear transition */
+    animation-timeline: view(); /* Specifies the timing function for the animation */
+    animation-range: entry cover 40%; /* Defines the entry animation range and coverage */
+}
+/* button styling */
 .button {
     border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
-    background: linear-gradient(to bottom, rgb(244, 143, 224), rgb(175, 20, 175)); /* Gradient background */
-    font-size: 20px; /* Font size */
-    color: rgb(238, 238, 238); /* Text color */
+    margin:0 0 1rem; /* margins */
     padding: 10px 50px; /* Padding for button */
+    font-size: 20px; /* Font size */
+    color: black; /* Text color */
+    background: linear-gradient(to bottom, rgba(255, 225, 230, 0.9), rgba(255, 179, 191,0.9)); /* Gradient background */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect */
     cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties on hover */
 }
-
 .button:hover {
-    background: linear-gradient(to bottom, rgb(187, 111, 172), rgb(133, 80, 122)); /* Hover background */
+    transform: translateY(-10px); /* Moves the button up slightly when hovered */
+    background: rgb(62, 62, 62); /* Changes background color to a darker shade on hover */
+    color: rgba(255, 179, 191, 0.9); /* Changes text color to maintain contrast against new background */
 }
 
-.button:active {
-    background: linear-gradient(to bottom, rgb(143, 83, 131), rgb(143, 85, 130)); /* Active state background */
-}
-.image-box{
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically if the container has a height */
-
-}
+/* footer styling */
 .footer {
     position: relative; /* Position relative for layout */
     background-color:rgb(173, 120, 186); /* Background color for footer */
@@ -360,6 +551,10 @@ header {
     text-align: center; /* Center text */
     width: 100%; /* Full width of the page */
     box-sizing: border-box; /* Include padding in width calculations */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-top: 10rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Creates a shadow effect on the text, */
+    margin-top: 13rem; /* margin on top */
+}
+.location {
+    font-size: 20px; /* Font size for location */
+    margin-right: 20px; /* Space to the right */
 }
