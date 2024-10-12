@@ -4,59 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kenny Tang">
-    <title>Restaurant Assignment Week 2 </title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS for styling -->
+    <title>Restaurant HCI Assignment</title>
+    <link rel="stylesheet" href="stylesheets/style.css"> <!-- Link to external CSS for styling -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"> <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"> <!-- Google Fonts -->               
 </head>
 <body>    
-    <header class="header">
+    <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="Solaria2.png" alt="Picture of Solaria Restaurant" class="header-image"></a> <!-- Logo image -->
-                <div class="logo-title">
-                    <h1>Solaria</h1> <!-- Title for Restaurant Name -->
-                </div>
+            <div>
+                <!-- Logo image -->
+                 <a href="index.html"><img src="images/Solaria2.png" alt="Picture of Solaria Restaurant" class="header-image"></a>
             </div>
             <ul class="nav-links"> <!-- Navigation links for the website -->
                 <li><a href="index.html">Home</a></li>
-                <li><a href="menus.html">Menus</a></li>
-                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="menus.html">Menu</a></li>
+                <li><a href="promotions.html">Promotion</a></li>
             </ul>
         </nav>
     </header>
-    <img class="image" src="solaria_resto.jpeg" alt="Picture of Solaria Restaurant" align="middle"> <!-- Main restaurant image -->
-    <div class="text-overlay">Welcome To Solaria Website</div> <!-- Overlay text -->
-    <div class="text-overlay2">~ Restaurant ~ </div> <!-- Additional overlay text -->
-    <div class="text-overlay3">" Your Culinary Journey "</div> <!-- Slogan overlay text -->
-    
+    <!-- Home section about -->
+    <section class="home" id="home" >
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Welcome to Solaria</div>
+                <div class="text-2">Restaurant</div>
+                <div class="text-3">"Your Culinary Journey"</div>
+            </div>
+        </div>
+    </section>      
     <br>
-    
-    <h3 class="location"> Location - Contact Info : <span style="font-weight: lighter; color:grey;"> FX Sudirman - 0812 3456 789 </span></h3> <!-- Location and Contact Info -->
-    
     <section class="section">  
-        <h3 class="about"> About Solaria </h3> <!-- Brief description about the restaurant -->
-        <p class="desc"> Solaria is a well-known restaurant chain in Indonesia. 
-        It serves a variety of dishes, including Indonesian favorites and international foods.</p> <!-- Description text -->
+        <div class="desc">
+            <!-- Brief description about the restaurant -->
+            <h3 style="font-size: 30px;font-weight:400;margin: 10px 0 5px 5px;padding-top: 5px;color:black;"> About Solaria </h3>
+            <p> Solaria is a well-known restaurant chain in Indonesia. 
+            It serves a variety of dishes, including Indonesian favorites and international foods.</p> <!-- Description text -->
+        </div>
+        <img src="images/solaria_resto2.jpg" class="image">
     </section>
-    
-    <section class="section">
-        <h3 class="cuisine"> Cuisine Type : </h3> <!-- Type of cuisine offered at the restaurant -->
-        <form>
-            <input type="radio" name="cuisine" value="Italian">Italian</input> <!-- Cuisine options -->
-            <input type="radio" name="cuisine" value="Japanese"> Japanese </input>
-            <input type="radio" name="cuisine" value="Indonesia"> Indonesia </input>
-            <input type="radio" name="cuisine" value="Chinese"> Chinese </input>
-            <input type="radio" name="cuisine" value="American"> American </input>
-        </form> 
+    <section class="section2">
+        <img src="images/solaria_resto3.jpg" class="image" alt="Restaurant Logo">
+        <div>
+            <h3 class="cuisine"> Cuisine Type  </h3> <!-- Type of cuisine offered at the restaurant -->
+            <div>
+                <form class="radio">
+                    <!-- Cuisine options -->
+                    <label><input type="radio" name="cuisine" value="Italian">Italian</input></label> 
+                    <label><input type="radio" name="cuisine" value="Japanese"> Japanese </input></label>
+                    <label><input type="radio" name="cuisine" value="Indonesia"> Indonesia </input></label>
+                    <label><input type="radio" name="cuisine" value="Chinese"> Chinese </input></label>
+                    <label><input type="radio" name="cuisine" value="American"> American </input></label>
+                </form> 
+            </div>
+        </div>
     </section>
-    
-    <br>
-    
-    <img src="Solaria.jpg" width="200" style="margin-left: 40rem;"> <!-- Image of the Restaurant Logo -->
-    
     <footer class="footer">
         <div class="footer-content">
-            <p>Kenny Tang / 2802517733 </p> <!-- Footer content with author's name and ID -->
+            <h3> Location - Contact Info : <span style="font-weight: lighter; color:rgb(230, 230, 230);"> FX Sudirman - 0812 3456 789 </span></h3> <!-- Location and Contact Info -->
+            <p>Kenny Tang / 2802517733</p> <!-- My name and NIM -->
         </div>
     </footer>
 </body>
