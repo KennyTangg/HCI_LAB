@@ -1,2 +1,3 @@
 # HCI
-Human Computer Interaction projects
+Human Computer Interaction project  
+Live link: https://kennytangg.github.io/HCI_LAB/
