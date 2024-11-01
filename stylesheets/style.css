@@ -269,7 +269,6 @@ header {
 }
 .nav-links a:hover {
     /* when hovering*/
-    transform: translateY(10px); /* Move link down on hover */
     background-color: rgb(167, 0, 167); /* Change background color on hover */
 }
 .nav-links a:active {
